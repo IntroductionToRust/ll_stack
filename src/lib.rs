@@ -17,6 +17,17 @@ use std::fmt::Display;
 ///  - [`Display`] since an implementation of [`Stack`] is required to implement trait [`Display`]
 ///
 /// It also implements iterators with the help of some helper types.
+///
+/// # Dependency
+/// 
+/// You can add the following line in section `[dependency]` of your `Cargo.toml`:
+///
+/// `ll_stack = {version = "*", git = "https://github.com/IntroductionToRust/ll_stack" }`
+///
+/// # Example
+/// 
+/// We added an example on how to use this stack at <https://github.com/IntroductionToRust/stack_main>
+
 #[derive(Debug, PartialEq, Clone)]
 pub struct GenericStack<T: Debug + PartialEq + Display + Clone> {
     head: Link<T>,

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["GenericStack","IntoIter","Iter","IterMut"],"trait":["Iterators","Stack"]};

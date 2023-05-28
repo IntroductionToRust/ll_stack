@@ -7,9 +7,9 @@ set -Eeuo pipefail
 # ./build.sh checks the code and exectures cargo doc
 ./build.sh
 # remove the old docs and replace by new docs
-git rm -r docs || echo "Apparently first run .. ignoring error"
+git rm -r docs || { echo "Ensure that docs exists! Bailing" ; exit 1; }
 mv target/doc docs
-echo '<meta http-equiv="refresh" content="0; url=$REPO/index.html">' > docs/index.html
+echo '<meta http-equiv="refresh" content="0; url='$REPO'/index.html">' > docs/index.html
 echo "" > docs/.nojekyll
 cat >  docs/_config.yml <<EOF
 title: Cayman theme
@@ -26,7 +26,7 @@ cat > docs/assets/css/style.scss <<EOF
 @import 'jekyll-theme-cayman';
 EOF
 git add docs
-git add _config.yml
+git add docs/_config.yml
 git add docs/assets/css/style.scss
 
 cat <<EOF
