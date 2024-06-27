@@ -19,13 +19,13 @@ use std::fmt::Display;
 /// It also implements iterators with the help of some helper types.
 ///
 /// # Dependency
-/// 
+///
 /// You can add the following line in section `[dependency]` of your `Cargo.toml`:
 ///
 /// `ll_stack = {version = "*", git = "https://github.com/IntroductionToRust/ll_stack" }`
 ///
 /// # Example
-/// 
+///
 /// We added an example on how to use this stack at <https://github.com/IntroductionToRust/stack_main>
 
 #[derive(Debug, PartialEq, Clone)]
@@ -195,7 +195,7 @@ impl<T: Debug + PartialEq + Clone + Display> Iterators<T> for GenericStack<T> {
         IntoIter(self)
     }
 
-    /// the iterator starts with the head element and method next()
+    /// the iterator starts with the head element and method `next()`
     /// will then follow the next pointers.
     fn iter(&self) -> Iter<'_, T> {
         Iter {
